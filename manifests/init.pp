@@ -23,7 +23,7 @@ class tse_myapplication {
   }
 
   apache::vhost { $::ec2_metadata['public-hostname']:
-    port          => '80',
+    port          => '8080',
     docroot       => '/var/www/user',
     docroot_owner => 'apache',
     docroot_group => 'apache',
