@@ -1,5 +1,5 @@
 class tse_myapplication {
-
+  contain apache
   contain java
 
   file { '/var/www/myapplication' :
