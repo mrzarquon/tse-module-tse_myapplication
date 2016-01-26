@@ -22,7 +22,7 @@ class tse_myapplication {
     content => "hello World! from ${::ec2_metadata['public-hostname']}",
   }
 
-  apache::vhost { $::ec2_metadata['public-hostname']:
+  apache::vhost { $::ec2_metadata['local-hostname']:
     port          => '8080',
     docroot       => '/var/www/user',
     docroot_owner => 'apache',
