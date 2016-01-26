@@ -2,6 +2,11 @@ class tse_myapplication {
   contain apache
   contain java
 
+  exec {'disable selinux':
+    command => '/usr/sbin/setenforce 0',
+    unless => '/usr/sbin/getenforce | /bin/grep Permissive',
+  }
+
   file { '/var/www/myapplication' :
     ensure => directory,
     owner  => 'apache',
